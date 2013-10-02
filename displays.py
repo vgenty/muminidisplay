@@ -12,8 +12,13 @@ def main():
     file_name = sys.argv[1]
     event     = int(sys.argv[2])
     
-    grid.gridit(file_name,event)
-
+    my_grid = grid.gridit(file_name,event)
+    grid_can = TCanvas('grid_can','grid_can',650,1100)
+    grid_can.Divide(1,2)
+    grid_can.cd(1)
+    my_grid[0].Draw('colz')
+    grid_can.cd(2)
+    my_grid[1].Draw('colz')
     
     #Draw PMT view
     s.style()
