@@ -15,6 +15,26 @@ def gridit(root_file,user_event):
     mapfile    = open('mapfile.csv')
     hit_map    = f.mapping(mapfile)
 
+    
+    
+    for pixel_index in hit_pixels : #Look in hit pixels for associated fibers
+        for index in hit_map[pixel_index] : #for each fiber attached to the pixel
+            for fiber in xrange(32) : # 0-31 fibers
+                if index == fiber :   # matched a fiber I am looking at
+                    for b in range(1,9): #filling for dougs histo
+                        if index <= 7:
+                            top_grid.SetBinContent(fiber+1,b,top_grid.GetBinContent(fiber+1,b)+1)
+                        elif index < 16 and index >7:
+                            top_grid.SetBinContent(b,fiber%8+1,top_grid.GetBinContent(b,(fiber%8)+1)+1)
+                        if index >=16 and index < 24:
+                            bot_grid.SetBinContent((fiber%16)+1,b,bot_grid.GetBinContent((fiber%16)+1,b)+1)
+                        elif index >=24:
+                            bot_grid.SetBinContent(b,(fiber%24)+1,bot_grid.GetBinContent(b,(fiber%24)+1)+1)
+                        
+                        
+                    
+                            
+    ''' #Leaving this code here just in case doug has a fit
     for pixel_index in hit_pixels:
         if hit_map[pixel_index][0] == 0 or hit_map[pixel_index][1] == 0:
             for b in range(1,9):
@@ -65,6 +85,11 @@ def gridit(root_file,user_event):
             for b in range(1,9):
                 top_grid.SetBinContent(b,8,top_grid.GetBinContent(b,8)+1)
 
+
+
+
+
+        
         if hit_map[pixel_index][0] == 16 or hit_map[pixel_index][1] == 16:
             for b in range(1,9):
                 bot_grid.SetBinContent(1,b,bot_grid.GetBinContent(1,b)+1)
@@ -118,7 +143,7 @@ def gridit(root_file,user_event):
             print 'Something went way wrong.'
         if hit_map[pixel_index][0] > 31 or hit_map[pixel_index][1] > 31:
             print 'Something went way wrong.'
-
+        '''    
 
     grid_list = [top_grid,bot_grid]
     for grid in grid_list:
