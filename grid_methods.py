@@ -1,5 +1,3 @@
-from ROOT import TH1I
-
 def fill_grid(hists,hit_pixels,hit_map):
     for pixel_index in hit_pixels:         #Look in hit pixels for associated fibers
         for index in hit_map[pixel_index]: #for each fiber attached to the pixel

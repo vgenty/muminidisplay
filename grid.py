@@ -19,7 +19,6 @@ def gridit(root_file,user_event):
 
     grid_list = gm.fill_grid(grid_list,hit_pixels,hit_map)
                         
-    #    grid_list = [top_grid,bot_grid]
     gm.fix_grids(grid_list)
 
     return grid_list
