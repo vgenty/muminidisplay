@@ -114,9 +114,9 @@ def gridit(root_file,user_event):
             for b in range(1,9):
                 bot_grid.SetBinContent(b,8,bot_grid.GetBinContent(b,8)+1)
         
-        if hit_map[pixel_index][0] < 0 or hit_hap[pixel_index][1] < 0:
+        if hit_map[pixel_index][0] < 0 or hit_map[pixel_index][1] < 0:
             print 'Something went way wrong.'
-        if hit_map[pixel_index][0] > 31 or hit_hap[pixel_index][1] > 31:
+        if hit_map[pixel_index][0] > 31 or hit_map[pixel_index][1] > 31:
             print 'Something went way wrong.'
 
 
