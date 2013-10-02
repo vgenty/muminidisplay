@@ -4,7 +4,7 @@ import pmt_methods as m
 import sys
 from ROOT import TCanvas, TH2D, gStyle, TFile
 from ROOT import TPaveText  
-#balls
+
 
 def pmt_draw(the_file,event):
     s.style()    
