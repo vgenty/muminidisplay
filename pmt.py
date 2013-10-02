@@ -21,9 +21,6 @@ def pmt_draw(the_file,event):
     pmt.SetTitle(";Column;Row")
     
     #Return
-    for_display=[]
-    for_display.append(pmt)
-    for_display.append(text)
-    for_display.append(title)
+    for_display=[pmt,text,title]
 
     return for_display
