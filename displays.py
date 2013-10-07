@@ -17,6 +17,8 @@ def main():
     grid_can.Divide(1,2)
     grid_can.cd(1)
     my_grid[0].Draw('colz')
+    grid_can.Update()
+    grid_can.Modified()
     grid_can.cd(2)
     my_grid[1].Draw('colz')
     
