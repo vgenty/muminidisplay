@@ -2,18 +2,28 @@ from ROOT import TFile, TTree
 import csv
 
 def fiber(file_name,user_event) :    
-    thefile = TFile(file_name,'read')
-    stat_tree = thefile.Get('theRunTree')
-    n_extrusions = 32
-    n = 0
     hits=[]
-    for event in stat_tree:
-        if user_event == n:
-            for fiber in range(0,n_extrusions - 1):
-                oo = event.FiberID[fiber]
-                if oo > 0 : hits.append(fiber)
-        n += 1
-
+    if 'root' in file_name:
+        thefile = TFile(file_name,'read')
+        stat_tree = thefile.Get('theRunTree')
+        n_extrusions = 32
+        n = 0
+        for event in stat_tree:
+            if user_event == n:
+                for fiber in range(0,n_extrusions - 1):
+                    oo = event.FiberID[fiber]
+                    if oo > 0 : hits.append(fiber)
+            n += 1
+        thefile.Close()
+        print hits
+    else:
+        print 'i am based god'
+        thefile = open(file_name,'r')
+        for line in thefile:
+            line=line.rstrip()
+            hits.append(int(line))
+            
+    print hits      
     #i now have the hits
     
     #open file and get mapping
