@@ -20,7 +20,7 @@ def pmtface() :
 def tpaver(sayit,x,y):
     offset = 0.2
     tpt    = TPaveText(0.18+(x-1)*offset,0.8-(y-1)*offset,0.23+(x-1)*offset,0.85-(y-1)*offset,"brNDC")
-    tpt.SetTextSize(22)
+    tpt.SetTextSize(25)
     tpt.SetTextFont(63)
     tpt.AddText(sayit)
     tpt.SetBorderSize(0)
@@ -34,6 +34,6 @@ def pmttitle(sayit) :
    pt.SetFillColor(0)
    pt.SetFillStyle(0)
    pt.SetTextFont(63)
-   pt.SetTextSize(24)
+   pt.SetTextSize(27)
    pt.AddText(sayit);
    return pt

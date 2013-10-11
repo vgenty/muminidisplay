@@ -12,9 +12,9 @@ def style() :
     gStyle.SetPadLeftMargin(0.1)
     gStyle.SetPadRightMargin(0.1)
     gStyle.SetFrameLineWidth(2)
-    gStyle.SetLabelSize(20,"xyz")
+    gStyle.SetLabelSize(25,"xyz")
     gStyle.SetLabelFont(63,"xyz")
-    gStyle.SetTitleSize(22,"xyz")
+    gStyle.SetTitleSize(25,"xyz")
     gStyle.SetTitleFont(63,"xyz")
     gStyle.SetHistLineWidth(2)
     
